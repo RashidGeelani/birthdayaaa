@@ -1,8 +1,8 @@
-import photo1 from "../assets/photo1.jpeg";
-import photo3 from "../assets/photo3.jpeg";
-import photo5 from "../assets/photo5.jpeg";
-import photo6 from "../assets/photo6.jpeg";
-import photo8 from "../assets/photo8.jpeg";
+import photo1 from "../../public/assets/photo1.jpeg";
+import photo3 from "../../public/assets/photo3.jpeg";
+import photo5 from "../../public/assets/photo5.jpeg";
+import photo6 from "../../public/assets/photo6.jpeg";
+import photo8 from "../../public/assets/photo8.jpeg";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { birthdayConfig } from "../birthday.config";
