@@ -12,27 +12,27 @@ export const birthdayConfig = {
   age: 26,
   music: "/music/our-song.mp3",
 
-  birthdayLetter: `I've been thinking about what to write here for a while.
+birthdayLetter: `I've been thinking about what to write here for a while.
 
-Not because I didn't have enough to say — the opposite, actually.
+Not because I didn't have enough to say — the opposite, actually. Alhamdulillah, that's usually the problem with you. There's too much.
 
-There's this thing that happens when you've been watching someone quietly, the way they navigate the world, the way they show up even when things are hard, the way they make the people around them feel more like themselves — and you realize you've accumulated this whole collection of moments you never want to forget.
+There's this thing that happens when you've been watching someone quietly — the way they carry themselves through hard days, the way their dua is the first thing on their tongue before their complaint, the way they make everyone around them feel a little more like themselves — and you realize you've been collecting these moments without even meaning to. Just gathering them, one by one, like they mattered. Because they did.
 
-That's you. That's what you've done.
+That's you. That's what you've done, without even trying to.
 
-You turned 26 today. Which is wild, because you already carry yourself like someone who has lived more than once. There's a kindness in you that doesn't flinch. A warmth that doesn't run out. A ridiculous sense of humour that shows up exactly when I need it most.
+You turned 26 today, and honestly, it still surprises me how someone can carry so much sabr and so much softness at the same time. There's a kindness in you that doesn't flinch, even when it costs you something. A warmth that doesn't run out, even on the days you have every right to keep it to yourself. And a sense of humour that shows up at exactly the moment I need it most — like Allah knew I'd need someone who could make me laugh in the middle of everything.
 
-I'm not great at saying these things out loud. You probably know that. But I am — clearly — capable of building an entire corner of the internet just to tell you.
+I'm not great at saying these things out loud. You probably know that about me by now. But I am, apparently, capable of building an entire corner of the internet just to tell you — so here it is, in writing, the way I mean it:
 
-So here it is:
+You are one of the greatest blessings Allah has placed in my life.
 
-You are one of the best things that ever happened to me.
+Not in a greeting-card way. In the real way — the way you make dua for people who don't even know you're doing it, the ordinary Tuesday way, the 3am-can't-sleep-so-let-me-check-on-you way. The kind of blessing that doesn't announce itself, it just quietly makes everything else make sense.
 
-Not in an abstract, greeting-card kind of way. In the specific, quiet, real way — the 3am kind, the ordinary Tuesday kind, the kind that compounds over time into something that feels like home.
+I ask Allah to bless this next year of your life — to make it easy where it's been hard, to keep that heart of yours soft, to give you everything you've quietly hoped for and didn't say out loud. Ameen.
 
 Happy birthday. I'm really glad you exist.
 
-And I'm really glad I get to know you.`,
+And I'm really glad Allah let our paths cross.`,
 
   reasons: [
     "Your smile — the one that starts small and takes over your whole face.",
