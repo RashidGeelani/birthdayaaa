@@ -1,0 +1,10 @@
+{
+  "description": "Experience a unique, interactive birthday journey with 26 personalized pages celebrating love and memories, designed to delight and surprise your partner.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
