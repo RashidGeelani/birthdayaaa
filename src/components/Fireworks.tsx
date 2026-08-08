@@ -37,8 +37,7 @@ export default function Fireworks({ active }: { active: boolean }) {
     window.addEventListener("resize", resize);
 
     const animate = () => {
-      ctx.fillStyle = "rgba(10,9,8,0.15)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       sparksRef.current = sparksRef.current.filter((s) => s.life < s.maxLife);
       sparksRef.current.forEach((s) => {

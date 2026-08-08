@@ -229,8 +229,8 @@ export default function Page26({ onRestart }: Props) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.3 }}
               >
-                I still haven't run out of reasons
-                <br />to choose you. ❤️
+                I still want forever to choose and make 
+                <br />more memories with you. ❤️
               </motion.p>
             </div>
 
@@ -284,9 +284,9 @@ export default function Page26({ onRestart }: Props) {
             className="font-mono text-xs"
             style={{ color: "rgba(201,169,110,0.3)", letterSpacing: "0.06em", lineHeight: 1.8 }}
           >
-            Built with ❤️, too much coffee, and questionable amounts of JavaScript.
+            Built with ❤️, too much coffee, and Sleep Deprived Eyes.
             <br />
-            git commit -m "Happy 26th ❤️"
+            You are 26 Babe
           </p>
         </motion.div>
       )}

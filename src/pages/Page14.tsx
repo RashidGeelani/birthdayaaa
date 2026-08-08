@@ -19,6 +19,7 @@ export default function Page14({ onNext }: Props) {
   const photos = birthdayConfig.memories;
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,6 +35,7 @@ export default function Page14({ onNext }: Props) {
   };
 
   const photo = photos[current];
+  const imageFailed = failedImages[current];
 
   return (
     <div
@@ -51,33 +53,60 @@ export default function Page14({ onNext }: Props) {
           exit={{ opacity: 0, scale: 0.97 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Placeholder with Ken Burns */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: GALLERY_COLORS[current % GALLERY_COLORS.length],
-              overflow: "hidden",
-            }}
-          >
-            <motion.div
+          {photo.image && !imageFailed ? (
+            <div
               style={{
                 position: "absolute",
-                inset: "-5%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 80,
-                color: "rgba(201,169,110,0.12)",
-                fontFamily: "'Playfair Display', serif",
-                fontStyle: "italic",
+                inset: 0,
+                overflow: "hidden",
               }}
-              animate={{ scale: [1, 1.05], x: [-10, 10] }}
-              transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
             >
-              📷
-            </motion.div>
-          </div>
+              <motion.img
+                src={photo.image}
+                alt={photo.caption}
+                onError={() =>
+                  setFailedImages((prev) => ({ ...prev, [current]: true }))
+                }
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+                animate={{ scale: [1, 1.08] }}
+                transition={{ duration: 6, ease: "linear" }}
+              />
+            </div>
+          ) : (
+            /* Placeholder with Ken Burns (fallback when no image or load fails) */
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: GALLERY_COLORS[current % GALLERY_COLORS.length],
+                overflow: "hidden",
+              }}
+            >
+              <motion.div
+                style={{
+                  position: "absolute",
+                  inset: "-5%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 80,
+                  color: "rgba(201,169,110,0.12)",
+                  fontFamily: "'Playfair Display', serif",
+                  fontStyle: "italic",
+                }}
+                animate={{ scale: [1, 1.05], x: [-10, 10] }}
+                transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+              >
+                📷
+              </motion.div>
+            </div>
+          )}
 
           {/* Dark overlay */}
           <div

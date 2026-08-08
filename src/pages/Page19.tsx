@@ -6,6 +6,21 @@ interface Props {
   onNext: () => void;
 }
 
+const BIRTH_DATE = new Date(2000, 7, 9, 4, 28, 0); // Aug 9, 2000, 4:28 AM
+
+function getAgeParts(now: Date) {
+  let diffMs = now.getTime() - BIRTH_DATE.getTime();
+  if (diffMs < 0) diffMs = 0;
+
+  const totalSeconds = Math.floor(diffMs / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return { days, hours, minutes, seconds };
+}
+
 export default function Page19({ onNext }: Props) {
   const [time, setTime] = useState(new Date());
 
@@ -19,6 +34,8 @@ export default function Page19({ onNext }: Props) {
     minute: "2-digit",
     hour12: true,
   });
+
+  const { days, hours, minutes, seconds } = getAgeParts(time);
 
   const FORECAST = [
     { day: "Today", icon: "♡", desc: "Birthday. 100% chance of being loved." },
@@ -63,7 +80,7 @@ export default function Page19({ onNext }: Props) {
           </div>
         </motion.div>
 
-        {/* Main weather card */}
+        {/* Main age counter card */}
         <motion.div
           className="rounded-2xl p-6 relative overflow-hidden"
           style={{
@@ -96,6 +113,12 @@ export default function Page19({ onNext }: Props) {
 
           <div className="relative z-10">
             <div
+              className="font-mono text-xs mb-1"
+              style={{ color: "#c9a96e77", letterSpacing: "0.1em" }}
+            >
+              DAYS ON EARTH
+            </div>
+            <div
               className="font-serif"
               style={{
                 fontSize: "clamp(48px, 15vw, 80px)",
@@ -105,19 +128,30 @@ export default function Page19({ onNext }: Props) {
                 letterSpacing: "-0.02em",
               }}
             >
-              {birthdayConfig.age}°
+              {days.toLocaleString()}
             </div>
             <div
-              className="font-sans font-medium mt-1"
-              style={{ fontSize: "clamp(16px, 4vw, 20px)", color: "#e8d5b7" }}
+              className="font-mono"
+              style={{
+                fontSize: "clamp(16px, 4.5vw, 22px)",
+                color: "#e8d5b7",
+                marginTop: 8,
+                letterSpacing: "0.02em",
+              }}
             >
-              100% chance of being loved
+              {String(hours).padStart(2, "0")}:{String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
             </div>
             <div
               className="font-mono text-xs mt-2"
               style={{ color: "#c9a96e77", letterSpacing: "0.06em" }}
             >
-              Feels like: home
+              hours : minutes : seconds
+            </div>
+            <div
+              className="font-mono text-xs mt-3"
+              style={{ color: "#c9a96e55", letterSpacing: "0.06em" }}
+            >
+              Since 4:28 AM · Aug 9, 2000
             </div>
           </div>
         </motion.div>
