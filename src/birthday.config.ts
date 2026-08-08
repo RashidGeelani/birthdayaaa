@@ -10,7 +10,7 @@ export const birthdayConfig = {
   name: "ANAM",
   birthday: "August 9, 2026",
   age: 26,
-  music: "/music/our-song.mp3",
+  music: "/music/song.mp3",
 
 birthdayLetter: `I've been thinking about what to write here for a while.
 
